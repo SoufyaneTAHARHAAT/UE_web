@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <script defer src="github-verify.js"></script>
+    <title>TP4 GitHub Verifier</title>
+    <style>
+      .stroke {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="">TP4 GitHub Verifier</h1>
+        <p class="">Click below to <strong>launch verifier on GitHub projects</strong>!</p>
+
+        <div class="">
+          <div class="">
+            <div class="">
+              <select id="file-selector">
+                <option value="TheBody983-starred.json" selected>TheBody983-starred.json</option>
+                <option value="Webcretaire-starred.json">Webcretaire-starred.json</option>
+                <option value="romulusFR-starred.json">romulusFR-starred.json</option>
+                <option value="not-existent.json">not-existent.json</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="">
+            <label class="" for="progress">Progress: <span id="progress-number">0 / *</span></label>
+            <progress class="" id="progress-bar" max="100"></progress>
+          </div>
+
+          <div class="">
+            <button id="go-button" class="">🚀</button>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="">
+            <article class="">
+              <div class="">Output</div>
+              <pre class="" id="output"></pre>
+            </article>
+          </div>
+        </div>
+      </div>
+      <!-- container -->
+    </section>
+  </body>
+</html>

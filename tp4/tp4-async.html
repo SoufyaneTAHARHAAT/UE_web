@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>LIFWEB TP4</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" />
+    <script src="tp4-async_complete_version.js" defer></script>
+    <style>
+      html {
+        width: 90%;
+        margin: auto;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: auto 1fr;
+      }
+
+      form button {
+        grid-column: 1 / -1;
+      }
+
+      form fieldset {
+        grid-column: 2 / -1;
+        display: flex;
+        /* flex-direction: column; */
+      }
+
+      label {
+        padding-right: 1ex;
+        padding-left: 1ex;
+      }
+
+      form > * {
+        margin: 1ex;
+      }
+
+      .offline {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>LIFWEB TP4 Correction</h1>
+
+    <section>
+      <h2>My Python's bookmarks</h2>
+      <button id="bookmarks-go">Go download !</button>
+      <ul id="bookmarks-list">
+        <li>Ici les liens</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Soumission de formulaire avec <code>fetch</code></h2>
+      <form action="#" method="POST">
+        <label for="name">Nom</label>
+        <input type="text" name="name" id="name" placeholder="John DOE" required />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="none@gmail.com" />
+
+        <fieldset>
+          <legend>Style favori</legend>
+
+          <label for="hard">Hard rock</label>
+          <input type="radio" name="category" value="hard" id="hard" />
+
+          <label for="heavy">Heavy metal</label>
+          <input type="radio" name="category" value="heavy" id="heavy" />
+
+          <label for="speed">Speed metal</label>
+          <input type="radio" name="category" value="speed" id="speed" />
+
+          <label for="thrash">Thrash metal</label>
+          <input type="radio" name="category" value="thrash" id="thrash" />
+
+          <label for="progressive">Progressive metal</label>
+          <input type="radio" name="category" value="progressive" id="progressive" />
+        </fieldset>
+
+        <button>Envoyer</button>
+      </form>
+    </section>
+  </body>
+</html>
