@@ -29,3 +29,42 @@ async function downloadAndCheck(event) {
 }
 
 $goButton.addEventListener("click", (event) => downloadAndCheck(event));
+
+// Fonction pour initialiser l'affichage de la progression
+function setProgress(total) {
+  $progressBar.value = 0; // Initialiser la barre de progression à zéro
+  $progressBar.max = total; // Définir la valeur maximale de la barre de progression sur le nombre total d'éléments à traiter
+  updateProgress(); // Mettre à jour l'affichage de la progression
+}
+
+// Fonction pour faire évoluer d'un cran la progression
+function updateProgress() {
+  $progressBar.value += 1; // Augmenter la valeur de la barre de progression de 1
+  $progressNb.textContent = `${$progressBar.value} / ${$progressBar.max}`; // Mettre à jour le texte affichant la progression actuelle
+}
+
+setProgress(7);
+
+// Fonction pour faire évoluer progressivement la barre de progression
+function incrementProgress(totalSeconds) {
+  const totalTime = totalSeconds * 1000; // Convertir en millisecondes
+  const totalIterations = $progressBar.max; // Nombre total d'itérations nécessaires pour atteindre la valeur finale de la barre de progression
+  const incrementValue = totalTime / totalIterations; // Valeur d'incrémentation pour chaque itération
+  
+  let currentValue = 0;
+
+  // Définir l'intervalle pour incrémenter la barre de progression
+  const interval = setInterval(() => {
+    currentValue++;
+    $progressBar.value = currentValue;
+
+    // Vérifier si la valeur actuelle atteint la valeur maximale de la barre de progression
+    if (currentValue >= $progressBar.max) {
+      clearInterval(interval); // Arrêter l'intervalle une fois la progression terminée
+    }
+  }, incrementValue);
+}
+
+// Utilisation :
+// Appeler la fonction incrementProgress avec le nombre total de secondes
+incrementProgress(10); // Par exemple, pour une progression de 10 secondes
